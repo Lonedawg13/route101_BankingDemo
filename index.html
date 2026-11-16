@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
   <link rel="stylesheet" href="styles.css">
-  <link rel="preload" href="amara-idle-natural.webp" as="image">
+  <link rel="preload" href="amara-static-fallback.webp" as="image">
 </head>
 <body data-page="home">
 
@@ -63,14 +63,17 @@
         <div class="portrait-glow" aria-hidden="true"></div>
         <article class="portrait-card amara-living" aria-label="Amara, AI Banking Adviser">
           <div class="amara-stage">
-            <img class="amara-motion"
-                 src="amara-idle-natural.webp"
-                 data-idle-src="amara-idle-natural.webp"
-                 data-speaking-src="amara-speaking-loop.webp"
-                 data-static-src="amara-static-fallback.webp"
-                 alt="Amara, digital banking adviser"
+            <video class="amara-motion"
+                 autoplay muted loop playsinline preload="auto"
+                 poster="amara-static-fallback.webp"
                  width="512" height="512"
-                 draggable="false">
+                 role="img" aria-label="Amara, digital banking adviser"
+                 data-idle-src="amara-idle-loop"
+                 data-speaking-src="amara-speaking-loop"
+                 data-current="amara-idle-loop">
+              <source src="amara-idle-loop.webm" type="video/webm">
+              <source src="amara-idle-loop.mp4" type="video/mp4">
+            </video>
           </div>
 
           <div class="speech">

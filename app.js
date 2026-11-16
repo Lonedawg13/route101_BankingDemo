@@ -14,21 +14,40 @@
 
   /* ---------- Avatar state (images marked .amara-motion) ---------- */
 
-  function motionImages() {
-    return document.querySelectorAll("img.amara-motion");
+  function motionMedia() {
+    return document.querySelectorAll("video.amara-motion");
   }
 
-  function sourceFor(img, state) {
-    if (state === "speaking") return img.dataset.speakingSrc;
-    if (state === "static") return img.dataset.staticSrc;
-    return img.dataset.idleSrc;
+  /* Each state is a video base name (without extension). "static" removes the
+     sources so the poster image shows instead. */
+  function applySource(video, state) {
+    var base = state === "speaking" ? video.dataset.speakingSrc
+             : state === "idle" ? video.dataset.idleSrc
+             : null;
+    var key = base || "static";
+    if (video.dataset.current === key) return;
+    video.dataset.current = key;
+
+    while (video.firstChild) video.removeChild(video.firstChild);
+
+    if (base) {
+      [["webm", "video/webm"], ["mp4", "video/mp4"]].forEach(function (pair) {
+        var source = document.createElement("source");
+        source.src = base + "." + pair[0];
+        source.type = pair[1];
+        video.appendChild(source);
+      });
+      video.load();
+      var played = video.play();
+      if (played && played.catch) played.catch(function () {});
+    } else {
+      video.pause();
+      video.load();
+    }
   }
 
   function setState(state) {
-    motionImages().forEach(function (img) {
-      var next = sourceFor(img, state);
-      if (next && img.getAttribute("src") !== next) img.setAttribute("src", next);
-    });
+    motionMedia().forEach(function (video) { applySource(video, state); });
     if (card) card.classList.toggle("is-speaking", state === "speaking");
     if (living) living.setSpeaking(state === "speaking");
   }
@@ -54,10 +73,10 @@
       return;
     }
 
-    var img = stage.querySelector("img.amara-motion");
-    if (!img) return;
+    var media = stage.querySelector("video.amara-motion");
+    if (!media) return;
 
-    living = startLiving(card, stage, img);
+    living = startLiving(card, stage, media);
     startTypewriter(card.querySelector(".speech p"));
   }
 
@@ -68,7 +87,7 @@
     - the portrait eases towards the pointer, so Amara appears to notice the visitor
     Motion pauses when the hero is off-screen or the tab is hidden.
   */
-  function startLiving(cardEl, stage, img) {
+  function startLiving(cardEl, stage, media) {
     var speaking = false;
     var visible = true;
     var tx = 0, ty = 0;   // pointer target, -0.5 .. 0.5
@@ -79,6 +98,13 @@
     if ("IntersectionObserver" in window) {
       new IntersectionObserver(function (entries) {
         visible = entries[0].isIntersecting;
+        // Pause the video while it is off-screen to save battery and CPU
+        if (visible) {
+          var p = media.play && media.play();
+          if (p && p.catch) p.catch(function () {});
+        } else if (media.pause) {
+          media.pause();
+        }
       }).observe(stage);
     }
 
@@ -108,7 +134,7 @@
       var x = sway + px * 12;
       var y = bob + py * 8;
 
-      img.style.transform =
+      media.style.transform =
         "translate3d(" + x.toFixed(2) + "px," + y.toFixed(2) + "px,0) " +
         "rotate(" + tilt.toFixed(3) + "deg) " +
         "scale(" + breathe.toFixed(4) + ")";
