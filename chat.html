@@ -1,87 +1,133 @@
-<!doctype html><html lang="en-GB"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Launch the Amara Route101 chat demonstration."><meta name="theme-color" content="#071638"><title>Chat with Amara | Route101 Banking AI</title><link rel="stylesheet" href="styles.css"></head><body data-page="chat"><header class="site-header"><div class="wrap nav"><a class="brand" href="index.html" aria-label="Route101 Banking AI home"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span><span class="brand-copy"><span class="brand-title">Route101 Banking AI</span><span class="brand-subtitle">POWERED by ROUTE101 Ltd.</span></span></a><button class="menu" aria-label="Toggle navigation" aria-expanded="false">☰</button><nav class="nav-links"><a data-page="home" href="index.html">Home</a><a data-page="voice" href="voice.html">Voice agent</a><a data-page="chat" href="chat.html">Chat demo</a><a class="nav-cta" href="chat.html">Start a demo →</a></nav></div></header><main class="experience-page"><section class="experience-hero"><div class="wrap"><a class="back" href="index.html">← Back to demo home</a><div class="experience-shell">
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Chat with Amara, the Route101 AI Banking Adviser. Quotes, claim status, registration and human handover.">
+  <meta name="theme-color" content="#071638">
+  <title>Chat with Amara | Route101 Banking AI</title>
 
-<section class="agent-profile">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="chat">
 
-    <div class="profile-top">
-        <span class="availability">Online now</span>
-    </div>
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="Route101 Banking AI home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+      </span>
+      <span class="brand-copy">
+        <span class="brand-title">Route101 Banking AI</span>
+        <span class="brand-subtitle">POWERED by ROUTE101 Ltd.</span>
+      </span>
+    </a>
+    <button class="menu" type="button" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav class="nav-links" aria-label="Main">
+      <a data-page="home" href="index.html">Home</a>
+      <a data-page="voice" href="voice.html">Voice agent</a>
+      <a data-page="chat" href="chat.html">Chat demo</a>
+      <a class="nav-cta" href="chat.html">Start a demo →</a>
+    </nav>
+  </div>
+</header>
 
-    <div style="margin:20px 0 30px;max-width:420px;">
-        <img
-            class="amara-motion" src="amara-idle-natural.webp" data-idle-src="amara-idle-natural.webp" data-speaking-src="amara-speaking-loop.webp" data-static-src="amara-static-fallback.webp"
-            alt="Amara"
-            style="
-                width:100%;
-                border-radius:32px;
-                display:block;
-                boxcorner to start a live
-        Cognigy-powered conversation.
-    </p>
+<main class="experience-page">
+  <section class="experience-hero">
+    <div class="wrap">
+      <a class="back" href="index.html">← Back to demo home</a>
 
-    <div class="journey-list">
+      <div class="experience-shell">
+        <section class="agent-profile">
+          <div class="profile-top">
+            <span class="availability">Online now</span>
+          </div>
 
-        <div>
-            <span>01</span>
-            <p>
-                <strong>Get an banking quote</strong>
-                <small>
-                    Explore available products, premiums and excesses.
-                </small>
-            </p>
-        </div>
+          <div class="amara-portrait">
+            <img src="amara-static-hd.webp" width="800" height="800" alt="Amara, AI Banking Adviser">
+            <span class="status" aria-hidden="true"></span>
+          </div>
 
-        <div>
-            <span>02</span>
-            <p>
+          <div class="kicker">Chat demonstration</div>
+          <h1>Chat with Amara</h1>
+          <p>Ask a question in your own words, or choose a journey below. Click the chat icon at the bottom right to start a live, Cognigy-powered conversation.</p>
+
+          <div class="journey-list">
+            <div>
+              <span>01</span>
+              <p>
+                <strong>Get a banking quote</strong>
+                <small>Explore available products, premiums and excesses.</small>
+              </p>
+            </div>
+            <div>
+              <span>02</span>
+              <p>
                 <strong>Check a claim</strong>
-                <small>
-                    Verify your details and retrieve current claim status.
-                </small>
-            </p>
-        </div>
-
-        <div>
-            <span>03</span>
-            <p>
+                <small>Verify your details and retrieve current claim status.</small>
+              </p>
+            </div>
+            <div>
+              <span>03</span>
+              <p>
                 <strong>Register as a new customer</strong>
-                <small>
-                    Create a demonstration profile through a guided journey.
-                </small>
-            </p>
-        </div>
-
-        <div>
-            <span>04</span>
-            <p>
+                <small>Create a demonstration profile through a guided journey.</small>
+              </p>
+            </div>
+            <div>
+              <span>04</span>
+              <p>
                 <strong>Request human support</strong>
-                <small>
-                    Escalate to an adviser when specialist help is needed.
-                </small>
-            </p>
-        </div>
+                <small>Escalate to an adviser when specialist help is needed.</small>
+              </p>
+            </div>
+          </div>
 
+          <div class="chat-callout">
+            <span class="pulse-dot" aria-hidden="true"></span>
+            <div>
+              <strong>Amara is ready to help</strong>
+              <small>Click the chat icon at the bottom right to begin.</small>
+            </div>
+            <span class="arrow" aria-hidden="true">↘</span>
+          </div>
+        </section>
+
+        <aside class="impact-panel">
+          <div class="impact-orb" aria-hidden="true"></div>
+          <span class="section-label light">One assistant. Multiple journeys.</span>
+          <h2>Built for clear, confident customer conversations.</h2>
+          <p>The demonstration combines AI-led conversation with structured Cognigy flows for customer lookup, registration, ID&amp;V, quote retrieval and claim status.</p>
+
+          <div class="metric-grid">
+            <div><strong>24/7</strong><span>Digital availability</span></div>
+            <div><strong>4</strong><span>Core demo journeys</span></div>
+            <div><strong>1</strong><span>Consistent experience</span></div>
+            <div><strong>Live</strong><span>Agent escalation path</span></div>
+          </div>
+
+          <a class="btn btn-light" href="index.html">Explore the full demo</a>
+        </aside>
+      </div>
     </div>
+  </section>
+</main>
 
-    <div class="chat-callout">
-
-        <span class="pulse-dot"></span>
-
-        <div>
-            <strong>
-                Henry‑James is ready to help
-            </strong>
-            <small>
-                Click the chat icon below right to begin.
-            </small>
-        </div>
-
-        <span class="arrow">↘</span>
-
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <strong>Route101 Banking AI</strong>
+      <span>POWERED by ROUTE101 Ltd.</span>
     </div>
+    <p>Demonstration experience only. Please do not enter genuine policy, payment or personal information.</p>
+  </div>
+</footer>
 
-</section>
-
-<aside class="impact-panel"><div class="impact-orb"></div><span class="section-label light">One assistant. Multiple journeys.</span><h2>Built for clear, confident customer conversations.</h2><p>The demonstration combines AI-led conversation with structured Cognigy flows for customer lookup, registration, ID&amp;V, quote retrieval and claim status.</p><div class="metric-grid"><div><strong>24/7</strong><span>Digital availability</span></div><div><strong>4</strong><span>Core demo journeys</span></div><div><strong>1</strong><span>Consistent experience</span></div><div><strong>Live</strong><span>Agent escalation path</span></div></div><a class="btn btn-light" href="index.html">Explore the full demo</a></aside></div></div></section></main><footer class="site-footer"><div class="wrap footer-inner"><div class="footer-brand"><strong>Route101 Banking AI</strong><span>POWERED by ROUTE101 Ltd.</span></div><p>Demonstration experience only. Please do not enter genuine policy, payment or personal information.</p></div></footer><script src="app.js"></script><script src="https://github.com/Cognigy/Webchat/releases/latest/download/webchat.js"></script>
+<script src="app.js"></script>
+<script src="https://github.com/Cognigy/Webchat/releases/latest/download/webchat.js"></script>
 
 <script>
 initWebchat(
@@ -111,5 +157,5 @@ setTimeout(() => {
 
 },3000);
 </script>
-``
-</body></html>
+</body>
+</html>
