@@ -1,1 +1,115 @@
-<!doctype html><html lang="en-GB"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Launch the Amara Route101 banking chat demonstration."><meta name="theme-color" content="#061638"><title>Chat with Amara | Route101 Banking AI</title><link rel="stylesheet" href="styles.css"></head><body data-page="chat"><header class="site-header"><div class="wrap nav"><a class="brand" href="index.html" aria-label="Route101 Banking AI home"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20h16M6 17V9m4 8V9m4 8V9m4 8V9M3 9h18L12 3 3 9Z"/></svg></span><span class="brand-copy"><span class="brand-title">Route101 Banking AI</span><span class="brand-subtitle">POWERED BY ROUTE101 LTD.</span></span></a><button class="menu" aria-label="Toggle navigation" aria-expanded="false">☰</button><nav class="nav-links"><a data-page="home" href="index.html">Home</a><a data-page="voice" href="voice.html">Voice assistant</a><a data-page="chat" href="chat.html">Chat assistant</a><a class="nav-cta" href="chat.html">Start a demo →</a></nav></div></header><main class="experience-page"><section class="experience-hero"><div class="wrap"><a class="back" href="index.html">← Back to demo home</a><div class="experience-shell"><section class="agent-profile"><div class="profile-top"><div class="mini-person"><img src="amara-animated.gif" alt="Animated Amara avatar"><span class="status"></span></div><span class="availability">Online now</span></div><div class="kicker">Conversational chat experience</div><h1>Ask naturally. Bank with confidence.</h1><p>Use the chat icon in the bottom-right corner to start a Cognigy-powered conversation with Amara.</p><div class="journey-list"><div><span>01</span><p><strong>Everyday account support</strong><small>Explore balances, transactions and account servicing journeys.</small></p></div><div><span>02</span><p><strong>Cards and payments</strong><small>Get guided help with card, payment and transfer enquiries.</small></p></div><div><span>03</span><p><strong>Savings and products</strong><small>Understand available products, features and eligibility.</small></p></div><div><span>04</span><p><strong>Security and human support</strong><small>Recognise urgent concerns and escalate with context.</small></p></div></div><div class="chat-callout"><span class="pulse-dot"></span><div><strong>Amara is ready to help</strong><small>Click the chat icon at the bottom right to begin.</small></div><span class="arrow">↘</span></div><div id="chatConfigNote" class="demo-note" hidden></div></section><aside class="impact-panel"><div class="impact-orb"></div><span class="section-label light">One assistant. Multiple journeys.</span><h2>Designed for clear, confident banking conversations.</h2><p>The demonstration combines AI-led conversation with controlled Cognigy flows for customer identification, authentication, servicing, fraud triage and specialist handover.</p><div class="scenario-stack"><div><b>Account servicing</b><span>Everyday queries and transaction support</span></div><div><b>Payments and cards</b><span>Guided, confirmation-led journeys</span></div><div><b>Security support</b><span>Fraud awareness and safe escalation</span></div><div><b>Human handover</b><span>Context-rich transfer when needed</span></div></div><a class="btn btn-light" href="voice.html">Try the voice assistant</a></aside></div></div></section></main><footer class="site-footer"><div class="wrap footer-inner"><div class="footer-brand"><strong>Route101 Banking AI</strong><span>POWERED BY ROUTE101 LTD.</span></div><p>Demonstration experience only. Please do not enter genuine account, card, payment or personal information.</p></div></footer><script src="app.js"></script><script src="config.js"></script><script src="https://github.com/Cognigy/Webchat/releases/latest/download/webchat.js"></script><script>window.addEventListener('load',function(){const note=document.getElementById('chatConfigNote');const url=window.ROUTE101_BANKING_CONFIG&&window.ROUTE101_BANKING_CONFIG.chatEndpoint;if(!url||url.includes('REPLACE_')){note.hidden=false;note.textContent='Add the Route101 Banking Cognigy Webchat endpoint to config.js to activate this demo.';return;}try{initWebchat(url,{settings:{designTemplate:2,botAvatarUrl:'amara-avatar.png'}});}catch(e){note.hidden=false;note.textContent='The chat assistant could not initialise. Check the endpoint in config.js.';console.error(e);}});</script></body></html>
+<!doctype html><html lang="en-GB"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Launch the Amara Route101 chat demonstration."><meta name="theme-color" content="#071638"><title>Chat with Amara | Route101 Banking AI</title><link rel="stylesheet" href="styles.css"></head><body data-page="chat"><header class="site-header"><div class="wrap nav"><a class="brand" href="index.html" aria-label="Route101 Banking AI home"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span><span class="brand-copy"><span class="brand-title">Route101 Banking AI</span><span class="brand-subtitle">POWERED by ROUTE101 Ltd.</span></span></a><button class="menu" aria-label="Toggle navigation" aria-expanded="false">☰</button><nav class="nav-links"><a data-page="home" href="index.html">Home</a><a data-page="voice" href="voice.html">Voice agent</a><a data-page="chat" href="chat.html">Chat demo</a><a class="nav-cta" href="chat.html">Start a demo →</a></nav></div></header><main class="experience-page"><section class="experience-hero"><div class="wrap"><a class="back" href="index.html">← Back to demo home</a><div class="experience-shell">
+
+<section class="agent-profile">
+
+    <div class="profile-top">
+        <span class="availability">Online now</span>
+    </div>
+
+    <div style="margin:20px 0 30px;max-width:420px;">
+        <img
+            class="amara-motion" src="amara-idle-natural.webp" data-idle-src="amara-idle-natural.webp" data-speaking-src="amara-speaking-loop.webp" data-static-src="amara-static-fallback.webp"
+            alt="Amara"
+            style="
+                width:100%;
+                border-radius:32px;
+                display:block;
+                boxcorner to start a live
+        Cognigy-powered conversation.
+    </p>
+
+    <div class="journey-list">
+
+        <div>
+            <span>01</span>
+            <p>
+                <strong>Get an banking quote</strong>
+                <small>
+                    Explore available products, premiums and excesses.
+                </small>
+            </p>
+        </div>
+
+        <div>
+            <span>02</span>
+            <p>
+                <strong>Check a claim</strong>
+                <small>
+                    Verify your details and retrieve current claim status.
+                </small>
+            </p>
+        </div>
+
+        <div>
+            <span>03</span>
+            <p>
+                <strong>Register as a new customer</strong>
+                <small>
+                    Create a demonstration profile through a guided journey.
+                </small>
+            </p>
+        </div>
+
+        <div>
+            <span>04</span>
+            <p>
+                <strong>Request human support</strong>
+                <small>
+                    Escalate to an adviser when specialist help is needed.
+                </small>
+            </p>
+        </div>
+
+    </div>
+
+    <div class="chat-callout">
+
+        <span class="pulse-dot"></span>
+
+        <div>
+            <strong>
+                Henry‑James is ready to help
+            </strong>
+            <small>
+                Click the chat icon below right to begin.
+            </small>
+        </div>
+
+        <span class="arrow">↘</span>
+
+    </div>
+
+</section>
+
+<aside class="impact-panel"><div class="impact-orb"></div><span class="section-label light">One assistant. Multiple journeys.</span><h2>Built for clear, confident customer conversations.</h2><p>The demonstration combines AI-led conversation with structured Cognigy flows for customer lookup, registration, ID&amp;V, quote retrieval and claim status.</p><div class="metric-grid"><div><strong>24/7</strong><span>Digital availability</span></div><div><strong>4</strong><span>Core demo journeys</span></div><div><strong>1</strong><span>Consistent experience</span></div><div><strong>Live</strong><span>Agent escalation path</span></div></div><a class="btn btn-light" href="index.html">Explore the full demo</a></aside></div></div></section></main><footer class="site-footer"><div class="wrap footer-inner"><div class="footer-brand"><strong>Route101 Banking AI</strong><span>POWERED by ROUTE101 Ltd.</span></div><p>Demonstration experience only. Please do not enter genuine policy, payment or personal information.</p></div></footer><script src="app.js"></script><script src="https://github.com/Cognigy/Webchat/releases/latest/download/webchat.js"></script>
+
+<script>
+initWebchat(
+    "https://endpoint-trial.cognigy.ai/d0ca45b45881d486b3a1cfdcb9ce147b7a7c8342eded597cd177cf70575986ec"
+);
+
+setTimeout(() => {
+
+    const style = document.createElement("style");
+
+    style.innerHTML = `
+
+    [data-cognigy-webchat-root] img{
+        width:80px !important;
+        height:80px !important;
+        object-fit:cover !important;
+    }
+
+    [data-cognigy-webchat-root] button{
+        width:120px !important;
+        height:120px !important;
+    }
+
+    `;
+
+    document.head.appendChild(style);
+
+},3000);
+</script>
+``
+</body></html>
